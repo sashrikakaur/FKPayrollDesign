@@ -1,15 +1,25 @@
 import java.sql.Date;
 
 public class SalesCommission {
-    
+   
+    private int id;
     private int eid;
     private Date date;
     private double commissionRate;
  
-    public SalesCommission(int eid, Date date, double commissionRate) {
+    public SalesCommission(int id, int eid, Date date, double commissionRate) {
+       this.id = id;
        this.eid = eid;
        this.date = date;
        this.commissionRate = commissionRate;
+    }
+  
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
  
     public int getEid( ) {

@@ -2,16 +2,26 @@ import java.sql.Date;
 
 public class Union {
     
+    private int id;
     private int eid;
     private Date lastPaidDate;
     private double weeklyDue;
     private double additionalDues;
  
-    public Union(int eid, Date lDate, double weeklyDue, double additionalDues) {
+    public Union(int id, int eid, Date lDate, double weeklyDue, double additionalDues) {
+       this.id = id;
        this.eid = eid;
        this.lastPaidDate = lDate;
        this.weeklyDue = weeklyDue;
        this.additionalDues = additionalDues;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 
     public int getEid() {
