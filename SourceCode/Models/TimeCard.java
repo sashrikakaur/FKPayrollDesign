@@ -1,14 +1,16 @@
-import java.sql.Date;
+package Models;
+
+import java.time.LocalDate;
 
 public class TimeCard {
     
     private int id;
     private int eid;
-    private Date date;
+    private LocalDate date;
     private int noOfHours;
     private boolean paid;
  
-    public TimeCard(int id, int eid, Date date, int noOfHours) {
+    public TimeCard(int id, int eid, LocalDate date, int noOfHours) {
        this.id = id;
        this.eid = eid;
        this.date = date;
@@ -32,11 +34,11 @@ public class TimeCard {
        this.eid = eid;
     }
 
-    public Date getDate() {
+    public LocalDate getDate() {
         return date;
     }
 
-    public void setDate(Date date) {
+    public void setDate(LocalDate date) {
         this.date = date;
     }
 
