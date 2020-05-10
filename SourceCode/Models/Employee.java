@@ -1,16 +1,23 @@
+package Models;
 enum Payment {PAYMASTER, BANK, POSTAL}
 public class Employee {
 
     private int eid;
     private String ename;
     private double monthlySalary;
+    private double hourlyrate;
     private Payment paymentMethod;
     private boolean salaried;
+
  
-    public Employee(int eid, String ename, double monthlySalary, Payment paymentMethod, boolean salaried) {
+    public Employee(int eid, String ename, double salary, Payment paymentMethod, boolean salaried) {
        this.eid = eid;
        this.ename = ename;
-       this.monthlySalary = monthlySalary;
+       if(salaried==true){
+         this.monthlySalary = salary;
+       }else{
+         this.hourlyrate = salary;
+       }
        this.paymentMethod = paymentMethod;
        this.salaried = salaried;
     }
@@ -42,14 +49,6 @@ public class Employee {
        if(salaried==true)
         this.monthlySalary = salary;
     }
- 
-    public Payment getPayment( ) {
-       return paymentMethod;
-    }
-    
-    public void setPayment(Payment payment) {
-       this.paymentMethod = payment;
-    }
 
     public boolean isSalaried( ) {
         return salaried;
@@ -58,4 +57,20 @@ public class Employee {
      public void setSalaried(boolean salaried) {
         this.salaried = salaried;
      }
- }
+
+     public double getHourlyrate() {
+        return hourlyrate;
+     }
+
+     public void setHourlyrate(double hourlyrate) {
+        this.hourlyrate = hourlyrate;
+     }
+
+     public Payment getPaymentMethod() {
+        return paymentMethod;
+     }
+
+     public void setPaymentMethod(Payment paymentMethod) {
+        this.paymentMethod = paymentMethod;
+      }
+}
