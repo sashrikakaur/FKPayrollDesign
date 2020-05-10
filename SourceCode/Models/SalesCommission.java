@@ -1,13 +1,15 @@
-import java.sql.Date;
+package Models;
+
+import java.time.LocalDate;
 
 public class SalesCommission {
    
     private int id;
     private int eid;
-    private Date date;
+    private LocalDate date;
     private double commissionRate;
  
-    public SalesCommission(int id, int eid, Date date, double commissionRate) {
+    public SalesCommission(int id, int eid, LocalDate date, double commissionRate) {
        this.id = id;
        this.eid = eid;
        this.date = date;
@@ -30,11 +32,11 @@ public class SalesCommission {
        this.eid = eid;
     }
 
-    public Date getDate() {
+    public LocalDate getDate() {
         return date;
     }
-
-    public void setDate(Date date) {
+    
+    public void setDate(LocalDate date) {
         this.date = date;
     }
 
